@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> تفاصيل تمديد العقد</title>
+    <link rel="icon" href="img/logo.png">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cairo:500,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/style.css" rel="styleSheet">
+    <!-- <link href="css/English_style.css" rel="styleSheet"> -->
+    <style>
+        .payment-button {
+            height: fit-content;
+            font-weight: 700 !important;
+            padding: 0px 6px !important;
+        }
+
+        .payment-button-card {
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (max-width: 745px) {
+            .payment-button-card {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+
+        }
+
+        .check-btn {
+            color: #fff;
+            background-color: #FF9626;
+            border-color: #FF9626;
+            padding: 0px 12px;
+            display: inline-block;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.28px;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid transparent;
+            font-size: 1rem;
+            border-radius: 8px;
+        }
+
+        .check-btn:hover {
+            background-color: white;
+            color: #FF9626;
+            border-color: #FF9626;
+        }
+
+        .systems-check {
+            height: 25px;
+            width: 25px;
+            background-color: red;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .global {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 1px solid rgba(255, 150, 38, 1);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            background-color: rgba(255, 150, 38, 0.08);
+        }
+
+        .global:hover {
+            border-color: #0787ff;
+        }
+
+        #removeSignatureImg {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 20px;
+        }
+
+        .modal-content {
+            border: 3px solid #FF9626;
+            border-radius: 10px;
+        }
+
+        .Picsignature-modal-content {
+            width: 300px;
+        }
+
+        .Picsignature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+
+</head>
+
+
+<body id="page-top" style="background-color:rgba(254, 248, 232, 1);">
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper">
+
+        <!-- Main Content -->
+        <div id="content">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light topbar mb-2 static-top shadow  justify-content-between">
+
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ">
+
+
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="img-profile rounded-circle" src="img/profile.png" alt="profile image">
+                            <div style="display: flex; flex-direction: column;align-items: center;">
+                                <span class=" text-dark font-weight-bold">عبد
+                                    الله </span>
+                                <span class="   text-dark">المدير التنفيذي
+                                </span>
+                            </div>
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-left shadow animated--grow-in"
+                            aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-user fa-sm fa-fw  text-dark-400"></i>
+                                حسابي
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-cogs fa-sm fa-fw  text-dark-400"></i>
+                                تغيير كلمة السر
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw  text-dark-400"></i>
+                                تسجيل الخروج
+                            </a>
+                        </div>
+                    </li>
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <!-- Nav Item - Messages -->
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class=""><img src="img/Rectangle 65.png" alt="massages alert icon"></i>
+                            <!-- Counter - Messages -->
+                            <span class="badge badge-danger badge-counter">7</span>
+                        </a>
+                        <!-- Dropdown - Messages -->
+                        <div class="dropdown-list dropdown-menu dropdown-menu-left shadow animated--grow-in"
+                            aria-labelledby="messagesDropdown" style="direction: ltr;">
+                            <h6 class="dropdown-header" style="background-color: #FF992E">
+                                مركز الرسائل
+                            </h6>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="dropdown-list-image mr-3">
+                                    <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                                    <div class="status-indicator bg-success"></div>
+                                </div>
+                                <div class="font-weight-bold">
+                                    <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                                        problem I've been having.</div>
+                                    <div class="small text-dark-600">Emily Fowler · 58m</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="dropdown-list-image mr-3">
+                                    <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
+                                    <div class="status-indicator"></div>
+                                </div>
+                                <div>
+                                    <div class="text-truncate">I have the photos that you ordered last month, how
+                                        would you like them sent to you?</div>
+                                    <div class="small text-dark-600">Jae Chun · 1d</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="dropdown-list-image mr-3">
+                                    <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
+                                    <div class="status-indicator bg-warning"></div>
+                                </div>
+                                <div>
+                                    <div class="text-truncate">Last month's report looks great, I am very happy with
+                                        the progress so far, keep up the good work!</div>
+                                    <div class="small text-dark-600">Morgan Alvarez · 2d</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="dropdown-list-image mr-3">
+                                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                        alt="...">
+                                    <div class="status-indicator bg-success"></div>
+                                </div>
+                                <div>
+                                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                                        told me that people say this to all dogs, even if they aren't good...</div>
+                                    <div class="small text-dark-600">Chicken the Dog · 2w</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item text-center small text-dark-600" href="#">Read More Messages</a>
+                        </div>
+                    </li>
+
+                    <!-- Nav Item - Alerts -->
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle" id="alertsDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i><img id="notificationImage" src="img/notofication.png" alt="notification alert icon"></i>
+                            <!-- Counter - Alerts -->
+                            <span id="counter" class="badge badge-danger badge-counter">3+</span>
+                        </a>
+                        <!-- Dropdown - Alerts -->
+                        <div class="dropdown-list dropdown-menu dropdown-menu-left shadow animated--grow-in"
+                            style="direction: ltr;" aria-labelledby="alertsDropdown">
+                            <div class="row alert">
+                                <div class="col-7" style="text-align:end;">
+                                    الإشعارات
+                                </div>
+                                <div class="col-2">
+                                    منتهي
+                                </div>
+                                <div class="col-3">
+                                    علي وشك
+                                </div>
+                            </div>
+                            <a class="dropdown-item dropdown-item-custom ">
+                                <div class="col-md-7 p-0" style="text-align:end;">
+                                    مستندات الفرع
+                                </div>
+                                <div class="col-md-2 ended-Docs-Num">
+                                    0
+                                </div>
+                                <div class="col-md-3 Not-ended-Docs-Num">
+                                    1
+                                </div>
+                            </a>
+                            <a class="dropdown-item dropdown-item-custom ">
+                                <div class="col-md-7 p-0" style="text-align:end;">
+                                    وثائق السيارة
+                                </div>
+                                <div class="col-md-2 ended-Docs-Num">
+                                    0
+                                </div>
+                                <div class="col-md-3 Not-ended-Docs-Num">
+                                    1
+                                </div>
+                            </a>
+                            <a class="dropdown-item dropdown-item-custom ">
+                                <div class="col-md-7 p-0" style="text-align:end;">
+                                    صيانة السيارة
+                                </div>
+                                <div class="col-md-2 ended-Docs-Num">
+                                    0
+                                </div>
+                                <div class="col-md-3 Not-ended-Docs-Num">
+                                    1
+                                </div>
+                            </a>
+                            <a class="dropdown-item dropdown-item-custom ">
+                                <div class="col-md-7 p-0" style="text-align:end;">
+                                    اسعار السيارات
+                                </div>
+                                <div class="col-md-2 ended-Docs-Num">
+                                    0
+                                </div>
+                                <div class="col-md-3 Not-ended-Docs-Num">
+                                    1
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- logo -->
+                <div class=" d-flex align-items-center on-mobile gap-3" style="color:black;">
+                    <div class="pt-sm-0 pt-md-4  pt-lg-4 pt-xl-4">
+                        <h1 class="hide-on-mobile" style="font-size: 1.2rem;">شركة كدي لتأجير السيارات
+                        </h1>
+                        <p class="extra-small-mobile">شهداء احد
+                            <span style="color: red;font-size: small;">موقوف</span>
+                        </p>
+
+                    </div>
+
+                    <img class="extra-small-mobile " src="img/logo.png" alt="logo image">
+                </div>
+
+            </nav>
+
+            <div class="container-fluid">
+                <section class="section-mainCard">
+                    <div class="row justify-content-center w-100 h-100">
+                        <div class="col-11 col-sm-10 col-md-11 col-lg-11 col-xl-10 text-center p-0 ">
+                            <div class="card main-card ">
+                                   <!-- edited -->
+                                   <div class="row p-2 align-items-center">
+                                    <a href="#" style="width: fit-content;">
+                                        <div>
+                                            <img src="img/Close.svg" alt="close_icon" class="close-icon">
+                                        </div>
+                                    
+
+                                    </a>
+                                    <a href="Contract extension.html" style="width: fit-content;">
+                                        <div>
+                                            <img src="img/Arrow_Left.svg" alt="back_icon" class="back-icon">
+                                        </div>
+                                    
+
+                                    </a>
+                                </div>
+                                <!-- --- -->
+                                <div class="row layout-row">
+
+                                    <div class="row" style="flex-direction: row-reverse;">
+                                        <div class="col justify-content-center d-flex title-row">
+                                            <h1 class="card-title">
+                                               تفاصيل تمديد العقد </h1>
+                                        </div>
+
+                                    </div>
+                                    <div class="row justify-content-center h-100 content-row">
+
+                                        <div class="col-md-11 mx-0 h-100">
+
+                                            <form id="contract-extension2-form" class="needs-validation" novalidate>
+
+                                                <fieldset>
+                                                    <div class="form-card extension2-card">
+                                                         <!-- //// -->
+                                                         <div class="d-flex mb-3 gap-3">
+                                                            <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view" target="_blank" class="pdf-anchor"><img src="img/contract.svg"alt="pdf for contract details" class="pdf_img"></a>
+                                                            <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view" target="_blank" class="pdf-anchor2"><img src="img/Invoice.svg"alt="pdf for contract details" class="pdf_img2"></a>
+                                                            <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view" target="_blank" class="pdf-anchor3"><img src="img/naql.svg"alt="pdf for contract details" class="pdf_img3"></a>
+
+                                                          </div>
+                                                          <!-- //// -->
+                                                        <div class="row "
+                                                            style="flex-direction: row-reverse;align-items: flex-start;">
+                                                            <div class=" col-md-7 col-lg-7 d-flex "
+                                                                style="flex-direction:row-reverse;flex-wrap:wrap">
+                                                                <div class="col-auto ">
+                                                                    <P>رقم العقد</P>
+                                                                </div>
+                                                                <div class="col-auto personal-data">
+                                                                    <P>23-1-60-5001-1020136</P>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-12 seacrh-icon-col">
+                                                                    <div class="col-sm-12  d-flex justify-content-end">
+
+                                                                        <img src="img/seacrh-icon.png"
+                                                                            alt="seacrh-icon Image"
+                                                                            id="hover-image-extension2">
+                                                                    </div>
+                                                                    <div class="dropdown-content  dropdown-content-extension"
+                                                                        id="dropdown-content-extension2">
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-4 ">
+                                                                                <p> المستأجر </p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p>نايف هشام هشام المعمر</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-4 ">
+                                                                                <p> السيارة</p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p>مازدا - سي اكس 30 - سماوي - 2021-دددد
+                                                                                </p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-4 ">
+                                                                                <p> بداية العقد </p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p>2024/5/30</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-4 ">
+                                                                                <p>النهاية المتوقعة </p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p>2024/6/30</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-4 ">
+                                                                                <p> الأيام المتبقية </p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p>3</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-4 ">
+                                                                                <p> الساعات المجانية </p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p>2</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                     
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-4 ">
+                                                                                <p> الحد الأعلى للساعات</p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p>0</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-4 ">
+                                                                                <p> الكيوات المجانية اليومية</p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p>200</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        <div class="row " style="flex-direction: row-reverse;">
+                                                            <div class="col-md-auto  col-lg-6 col-xl-4 d-flex "
+                                                                style="flex-direction:row-reverse;align-items: center;flex-wrap: wrap;">
+                                                                <div class="col-auto">
+                                                                    <P> صافى العقد</P>
+                                                                </div>
+                                                                <div class="col-auto personal-data">
+                                                                    <P> 454.25</P>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-12 seacrh-icon-col">
+                                                                    <div class="col-sm-12  d-flex justify-content-end">
+
+                                                                        <img src="img/seacrh-icon.png"
+                                                                            alt="seacrh-icon Image"
+                                                                            id="net_contract_Icon">
+                                                                    </div>
+                                                                    <div class="dropdown-content  dropdown-content-extension"
+                                                                        id="net_contract_dropdown">
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-6 ">
+                                                                                <p> إيجار  </p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p>4.652.00</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-6 ">
+                                                                                <p> تفويض </p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p>5.00 </p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-6 ">
+                                                                                <p>مميزات إضافية </p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p>0.00</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-6 ">
+                                                                                <p> سائق إضافي </p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p> 0.00  </p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-6 ">
+                                                                                <p> سائق خاص</p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p> 10.00 </p>
+                                                                               
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-6 ">
+                                                                                <p> خيارات </p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p>1.00</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-6 ">
+                                                                                <p> إضافات </p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p>0.00</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-6 ">
+                                                                                <p> خصم </p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p>0.00</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="row dropdown-content-row">
+                                                                            <div class="col-6 ">
+                                                                                <p> ضريبة </p>
+                                                                            </div>
+                                                                            <div class="col personal-data">
+                                                                                <p>694.00 </p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" col-lg-4 d-flex "
+                                                                style="flex-direction:row-reverse;align-items: center;">
+                                                                <div class="col-auto">
+                                                                    <P>المبلغ المدفوع
+                                                                    </P>
+                                                                </div>
+                                                                <div class="col-auto personal-data">
+                                                                    <P>500.00</P>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row flex-row-reverse">
+                                                            <div class=" col-lg-4 d-flex "
+                                                                style="flex-direction:row-reverse;align-items: baseline;">
+                                                                <div class="col-auto">
+                                                                    <label id="days-number" for="days-number-input">
+                                                                        عدد أيام التمديد</label>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <input type="text"
+                                                                        class="form-control form-control1"
+                                                                        id="days-number-input" name="days-number"
+                                                                        aria-describedby="inputGroupPrepend"
+                                                                        autocomplete="off" required>
+                                                                    <div class="row requird-field-row-last">
+                                                                        <div class="invalid-feedback"
+                                                                            style="display: none;">
+                                                                            هذا الحقل مطلوب
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="  col-lg-4  d-flex "
+                                                                style="flex-direction:row-reverse;align-items: center;">
+                                                                <div class="col-auto">
+                                                                    <P> نهايته</P>
+                                                                </div>
+                                                                <div class="col-auto personal-data">
+                                                                    <P> ۲۰۲۲/۲/٥</P>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" col-lg-4 d-flex "
+                                                                style="flex-direction:row-reverse;align-items: center;">
+                                                                <div class="col-auto">
+                                                                    <P>إجمالي أيام العقد </P>
+                                                                </div>
+                                                                <div class="col-auto personal-data">
+                                                                    <P>8</P>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row " style="flex-direction: row-reverse;">
+                                                            <div class=" col-lg-4 d-flex "
+                                                                style="flex-direction:row-reverse;align-items: center;">
+                                                                <div class="col-auto">
+                                                                    <P>إجمالي العقد</P>
+                                                                </div>
+                                                                <div class="col-auto personal-data">
+                                                                    <P> ۱٥۰٥.۰۰</P>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class=" col-lg-4 d-flex "
+                                                                style="flex-direction:row-reverse;align-items: center;">
+                                                                <div class="col-auto">
+                                                                    <P>قيمة الخصم</P>
+                                                                </div>
+                                                                <div class="col-auto personal-data">
+                                                                    <P> 0.00</P>
+                                                                </div>
+                                                            </div>
+                                                            <div class=" col-lg-4 d-flex "
+                                                                style="flex-direction:row-reverse;align-items: center;">
+                                                                <div class="col-auto">
+                                                                    <P>قيمة الضريبة</P>
+                                                                </div>
+                                                                <div class="col-auto personal-data">
+                                                                    <P>۲۲٥.۷٥</P>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row" style="flex-direction: row-reverse;">
+                                                            <div class=" col-lg-4 d-flex "
+                                                                style="flex-direction:row-reverse;align-items: center;">
+                                                                <div class="col-auto">
+                                                                    <P>صافي العقد</P>
+                                                                </div>
+                                                                <div class="col-auto personal-data">
+                                                                    <P>۱۷۳۰.۷٥</P>
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div class=" col-lg-4 d-flex "
+                                                                style="flex-direction:row-reverse;align-items: center;">
+                                                                <div class="col-auto">
+                                                                    <P>الرصيد السابق
+                                                                    </P>
+                                                                </div>
+                                                                <div class="col-auto personal-data">
+                                                                    <P> ۰۰.۹٦</P>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class=" col-lg-4 d-flex "
+                                                                style="flex-direction:row-reverse;align-items: center;">
+                                                                <div class="col-auto">
+                                                                    <P>المبلغ المطلوب</P>
+                                                                </div>
+                                                                <div class="col-auto personal-data">
+                                                                    <P>۱۷۲۹.۷۹</P>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row" style="flex-direction: row-reverse;">
+                                                            <div class=" col-lg-4 d-flex "
+                                                                style="flex-direction:row-reverse;">
+                                                                <div class="col-auto">
+                                                                    <label id="amount-paid" for="amount-paid-input">
+                                                                        المبلغ المدفوع</label>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <input type="text"
+                                                                        class="form-control form-control2"
+                                                                        id="amount-paid-input" name="amount-paid"
+                                                                        autocomplete="off" >
+                                                                    <div class="row requird-field-row-last">
+                                                                        <div class="invalid-feedback"
+                                                                            style="display: none;">
+                                                                            هذا الحقل مطلوب
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class=" col-lg-4 d-flex "
+                                                                style="flex-direction:row-reverse;flex-wrap: nowrap;">
+                                                                <div class="col-auto d-flex ps-0"
+                                                                    style="justify-content: flex-end;">
+                                                                    <label id="payment-method"
+                                                                        for="payment-method-select">طريقة الدفع</label>
+
+                                                                </div>
+
+                                                                <div class="col-auto ">
+                                                                    <div class="offset">
+                                                                        <select class="form-select form-select-last"
+                                                                            id="payment-method-select"
+                                                                            name="payment-method" >
+                                                                            <option selected disabled>
+                                                                            </option>
+                                                                            <option value="نقدا"> نقدا</option>
+                                                                            <option value="مدي"> مدي</option>
+                                                                            <option value="فيزا"> فيزا</option>
+                                                                            <option value="فيزا"> ماسترد كارد</option>
+
+                                                                        </select>
+
+                                                                        <div class="row requird-field-row-last">
+                                                                            <div class="invalid-feedback"
+                                                                                style="display: none;">
+                                                                                هذا الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class=" col-lg-auto d-flex "
+                                                                style="flex-direction:row-reverse;flex-wrap: wrap;">
+
+                                                                <div class="col-auto d-flex"
+                                                                    style="justify-content: flex-end;">
+                                                                    <label id="selling-point"
+                                                                        for="selling-point-dropdown"> نقطة البيع
+                                                                    </label>
+
+                                                                </div>
+
+                                                                <div class="col-7 col-lg-9 ">
+                                                                    <div class="offset">
+                                                                        <select class="form-select form-select-last"
+                                                                            id="selling-point-dropdown"
+                                                                            name="selling-point" >
+                                                                            <option selected disabled>
+                                                                            </option>
+                                                                            <option value="">ايرادات المستأجرين بمصرف الراجحي </option>
+                                                                            <option value=""> </option>
+                                                                            <option value=""> </option>
+                                                                        </select>
+                                                                        <div class="row requird-field-row-last">
+                                                                            <div class="invalid-feedback"
+                                                                                style="display: none;">
+                                                                                هذا الحقل مطلوب
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="row p-2" style="flex-direction:row-reverse">
+                                                            <div class="col-auto">
+                                                                <label id="notes"
+                                                                    for="FormControl-last-Textarea">ملاحظات</label>
+                                                            </div>
+                                                            <div class="col-lg-7">
+                                                                <textarea class="form-control textarea-inputs" rows="1"
+                                                                    maxlength="100" name="notes"></textarea>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="row button-row align-items-center"
+                                                        style="padding: 6px 7px 10px 20px;">
+                                                        <div class="payment-button-card button-card   gap-2">
+                                                            <button type="submit"
+                                                            class="btn check-btn payment-button">رجوع</button>
+
+                                                            <button type="submit"
+                                                                class="btn check-btn payment-button">حفظ</button>
+
+                                                            <button type="button"
+                                                                class="btn check-btn payment-button signature-button"
+                                                                data-bs-toggle="modal" href="#PicsignatureModal">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-auto">
+                                                                        <div class="systems-check"> <i
+                                                                                class="fa-solid fa-check text-white"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        توقيع المستأجر
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+
+                                                            <button type="button" class="btn check-btn payment-button">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-auto">
+                                                                        <div class="systems-check"> <i
+                                                                                class="fa-solid fa-check text-white"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        العقد الموحد
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                            <button type="button" class="btn check-btn payment-button">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-auto">
+                                                                        <div class="systems-check"> <i
+                                                                                class="fa-solid fa-check text-white"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        شموس
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+
+                                                        </div>
+                                                    </div>
+
+                                                </fieldset>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="PicsignatureModal" tabindex="-1"
+                                aria-labelledby="PicignaturPopupModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
+                                    <div class="modal-content Picsignature-modal-content pt-5 pb-5">
+                                        <div class="modal-body Picsignature">
+                                            <div class="global">
+                                                <div class="main-container" id="removeSignatureImg"></div>
+                                                <div class="upload-container">
+                                                    <img class="upload-icon" src="img/Rectangle 144.png"
+                                                        alt="Upload Icon">
+                                                    <p>ارفق صورة التوقيع</p>
+                                                    <input type="file" id="imageUpload" style="display: none;"
+                                                        name="signature image">
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <button id="image-submit-Btn" class="check-btn" type="submit"
+                                                style="width: 200px;">قبول التوقيع</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <footer class="fixed-bottom-xl">
+                <div class="before-footer-widget">
+                    <svg width: 100%; height:auto viewbox="0 0 2444 132">
+                        <path fill="rgba(254, 248, 232, 1)" fill-rule="evenodd"
+                            d="M1222 0h1222c-444.13 88-852.127 132-1223.993 132C849.253 132 442.585 88.263 0 .789V0h1222z">
+                        </path>
+                    </svg>
+                </div>
+
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="js/extension2.js"></script>
+    <script src="js/validation.js"></script>
+    <script>
+        const buttons = document.querySelectorAll('.payment-button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const originalContent = button.innerHTML;
+
+                const spinner = document.createElement('div');
+                spinner.classList.add('spinner-border', 'spinner-border-sm', 'text-warning');
+                spinner.role = 'status';
+
+                const checkIcon = document.createElement('i');
+                checkIcon.classList.add('fa-solid', 'fa-check');
+
+                button.innerHTML = '';
+                button.appendChild(spinner);
+                button.classList.add('spinner-payment-check');
+
+                setTimeout(() => {
+                    button.innerHTML = originalContent;
+                    const checkDiv = button.querySelector('.row .col-auto .systems-check');
+                    checkDiv.style.backgroundColor = 'green';
+                    button.classList.remove('spinner-payment-check');
+                }, 2000);
+            });
+        });
+    </script>
+    <script>
+
+        // // //////////////////////////////////////////////// رفع صورة التوقيع ////////////////////////////////////////////////////////////////////////
+        const uploadContainer = document.querySelector('.upload-container');
+        const mainContainer = document.querySelector('.main-container');
+
+        const imageUpload = document.getElementById('imageUpload');
+        const imageSubmitBtn = document.getElementById('image-submit-Btn');
+        var imgeURL
+        const uploadedImg = null
+        uploadContainer.addEventListener('click', function () {
+            imageUpload.click();
+        });
+
+        imageUpload.addEventListener('change', function () {
+            const file = imageUpload.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const imageURL = e.target.result;
+                    const previewImage = document.createElement('img');
+                    previewImage.classList.add('preview-image');
+                    previewImage.src = imageURL;
+                    imgeURL = imageURL
+                    mainContainer.innerHTML = '<i class="fa-regular fa-circle-xmark"  style="cursor: pointer;"></i>';
+                    uploadContainer.innerHTML = '';
+                    uploadContainer.appendChild(previewImage);
+                    uploadContainer.classList.add('previewing');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        imageSubmitBtn.addEventListener('click', function (event) {
+            event.preventDefault();
+            if (uploadContainer.firstChild) {
+                uploadContainer.innerHTML = '';
+                uploadContainer.classList.remove('previewing');
+                uploadContainer.innerHTML = ' <img class="upload-icon" src="img/Rectangle 144.png" alt="Upload Icon"><p>ارفق صورة التوقيع</p>';
+                console.log(imgeURL)
+            }
+            $('#PicsignatureModal').modal('hide');
+        });
+        removeSignatureImg.addEventListener('click', function (event) {
+            event.preventDefault();
+            if (uploadContainer.firstChild) {
+                uploadContainer.innerHTML = '';
+                mainContainer.innerHTML = '';
+                uploadContainer.classList.remove('previewing');
+                uploadContainer.innerHTML = ' <img class="upload-icon" src="img/Rectangle 144.png" alt="Upload Icon"><p>ارفق صورة التوقيع</p>';
+            }
+        });
+        // ///////%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    </script>
+</body>
+
+</html>
