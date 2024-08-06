@@ -22,10 +22,7 @@ nav {
     background-color: rgba(255, 206, 148, 1);
     padding: .5rem 1rem !important;
 }
-.navbar {
-    height: 10vh;
 
-}
 /*######################################################## */
 .on-mobile {
     text-align: end;
@@ -2429,7 +2426,7 @@ padding-right:0px ;
     }
     
 }
-@media (max-width : 600px) {
+@media (max-width :600px) {
     .not-in-mobile{
         display: none;
     }
