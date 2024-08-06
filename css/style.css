@@ -1447,7 +1447,6 @@ flex-direction: row-reverse;
 
     #dropdown-content-Settlement,
     #dropdown-content-Settlement3 {
-        width: 200%;
         left: none;
         right: 10px;
 
@@ -2476,6 +2475,11 @@ height: 47vh;
     height: 100%;
     margin-bottom: 10px;
     gap: 10px;
+}
+@media (min-width:767px) {
+    #dropdown-content-Settlement , #dropdown-content-Settlement3{
+        min-width: 300px;
+    }
 }
 .compensation-Div-textarea textarea , .expensesDiv-textarea textarea{
     height:50vh ;
