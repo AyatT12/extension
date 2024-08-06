@@ -22,7 +22,10 @@ nav {
     background-color: rgba(255, 206, 148, 1);
     padding: .5rem 1rem !important;
 }
+.navbar {
+    height: 10vh;
 
+}
 /*######################################################## */
 .on-mobile {
     text-align: end;
@@ -2423,6 +2426,11 @@ padding-right:0px ;
         display: none;
     }
 }
+@media (min-width : 1600px) {
+    .licence-dates{
+        gap: 40px;  
+    }
+}
 /*  ستايل صفحة بيانات المستأجر التفصيلية  */
 .data-col {
     flex-direction: row-reverse;
@@ -2434,6 +2442,8 @@ height: 47vh;
 .licence-dates{
     font-size: 12px;
     margin: 0;
+    justify-content: end;
+    
 }
 /* التمديد */
 #contract-extension2-form .form-card{
