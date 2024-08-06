@@ -48,7 +48,15 @@ nav {
     resize: none;
     font-size: .875rem;
 }
-
+.inputs:focus,
+.textarea-inputs:focus,
+.form-select-driver:focus,
+.form-control2:focus,
+.form-control1:focus,
+.form-select-last:focus {
+    box-shadow: none !important;
+    border: 2px solid #facd9c !important;
+}
 .textarea-inputs {
     /* border-top: none; */
     /* min-height: calc(3em + 0.75rem + calc(var(--bs-border-width)* 2)) !important; */
