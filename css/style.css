@@ -860,6 +860,11 @@ footer {
 .dropdown-content-extension p {
     margin-bottom: .4rem !important;
 }
+.dropdown-content-extension{
+    width: fit-content;
+    min-width: 200px;
+    right: 0px;
+}
 
 .dropdown-content-row {
     flex-direction: row-reverse;
@@ -1418,12 +1423,12 @@ flex-direction: row-reverse;
 
 }
 
-@media(min-width:1000px) {
+@media(max-width:991px) {
 
     .dropdown-content-extension {
-        width: 120%;
-        left: -90px;
-        right: 90px;
+        /* width: 120%; */
+        /* left: -90px; */
+        right: 0px;
 
     }
 }
@@ -2455,6 +2460,11 @@ height: 47vh;
 /* التمديد */
 #contract-extension2-form .form-card{
     height: 100%;
+}
+@media (min-width:767px) {
+    #dropdown-content-extension2{
+        min-width: 300px;
+    }
 }
 /* تقرير مالي  */
 
