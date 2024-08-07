@@ -15,7 +15,107 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="css/style.css" rel="styleSheet">
     <!-- <link href="css/English_style.css" rel="styleSheet"> -->
+    <style>
+        .main-loader-container {
+            position: fixed;
+            top: 0%;
+            max-width: 100%;
+            background-color: #ffffff00;
+            height: 100%;
+            display: none;
+        }
+        .main-loader-row{
+            position: absolute;
+            width: 100%;
+            top: 40%;
+        }
+        
+        .ActiveTime_title {
+            font-weight: 600;
+        }
 
+        .ActiveTime_P {
+            font-size: 18px;
+            color: #666666;
+            line-height: 32px;
+        }
+
+        .base-timer {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .base-timer__svg {
+            transform: scaleX(-1);
+            transform: rotate3d(1, 1, 1, 1deg);
+            background: white;
+           border-radius: 50%;
+
+        }
+
+        .base-timer__circle {
+            fill: none;
+            stroke: none;
+        }
+
+        .base-timer__path-elapsed {
+            stroke-width: 7px;
+            stroke: #D9D9D9;
+        }
+
+        .base-timer__path-remaining {
+            stroke-width: 7px;
+            stroke-linecap: round;
+            transform: rotate(90deg);
+            transform-origin: center;
+            transition: 1s linear all;
+            fill-rule: nonzero;
+        }
+
+        .base-timer__path-remaining.blue {
+            stroke: #4d4d4d;
+        }
+
+        .base-timer__label {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+        }
+
+        #container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #D9D9D9;
+        }
+
+        .Dots-container {
+            display: flex;
+            gap: 5px;
+            margin: 0px 10px;
+        }
+        #app{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style> 
 </head>
 
 
@@ -528,7 +628,7 @@
                                                                     </div>
                                                                 </div>
                                                             </button>
-                                                            <button type="button" class="btn check-btn payment-button">
+                                                            <button type="button" class="btn check-btn payment-button" onclick="loader()">
                                                                 <div class="row align-items-center">
                                                                     <div class="col-auto">
                                                                         <div class="systems-check"> <i
@@ -568,6 +668,44 @@
                 </div>
 
             </footer>
+            <div class="container main-loader-container" >
+                <div class="row flex-column align-items-center justify-content-center g-3 main-loader-row " >
+                    <div id="app">
+                        <div class="base-timer">
+                            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <g class="base-timer__circle">
+                                    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                                    <path
+                                        id="base-timer-path-remaining"
+                                        stroke-dasharray="0 283"
+                                        class="base-timer__path-remaining blue"
+                                        d="
+                                        M 50, 50
+                                        m -45, 0
+                                        a 45,45 0 1,0 90,0
+                                        a 45,45 0 1,0 -90,0
+                                        "
+                                    ></path>
+                                </g>
+                            </svg>
+                              
+                               <div  id="base-timer-label" class="base-timer__label"> 
+                              <div>
+                                إنتظر من فضلك
+                              </div>
+             
+                                <div class="Dots-container">
+                                   <div class="Dot" id="dot1"></div>
+                                   <div class="Dot" id="dot2"></div>
+                                   <div class="Dot" id="dot3"></div>
+                               </div>
+                               </div>
+                                
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
@@ -602,6 +740,79 @@
                 });
             });
         });
+    </script>
+     <script>
+        function loader(){
+        $('.main-loader-container').css("display","block");
+         const FULL_DASH_ARRAY = 283; 
+        const WARNING_THRESHOLD = 100;
+        const ALERT_THRESHOLD = 283;
+    
+        const COLOR_CODES = {
+            info: {
+                color: "blue"
+            },
+            warning: {
+                color: "blue",
+                threshold: WARNING_THRESHOLD
+            },
+            alert: {
+                color: "red",
+                threshold: ALERT_THRESHOLD
+            }
+        };
+    
+        const TIME_LIMIT = 50;
+        let timePassed = 0;
+        let timeLeft = TIME_LIMIT;
+        let timerInterval = null;
+    
+        startTimer();
+    
+        function onTimesUp() {
+            clearInterval(timerInterval);
+        }
+    
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timePassed = timePassed += 1;
+                timeLeft = TIME_LIMIT - timePassed;
+                setCircleDasharray();
+    
+                if (timeLeft === 0) {
+                    onTimesUp();
+                }
+            }, 1000);
+        }
+    
+        function calculateTimeFraction() {
+            return (TIME_LIMIT - timeLeft) / TIME_LIMIT;
+        }
+    
+        function setCircleDasharray() {
+            const circleDasharray = `${(
+                calculateTimeFraction() * FULL_DASH_ARRAY
+            ).toFixed(0)} 283`;
+            document
+                .getElementById("base-timer-path-remaining")
+                .setAttribute("stroke-dasharray", circleDasharray);
+        }
+    
+        const dots = document.querySelectorAll('.Dot');
+        let currentDot = 0;
+    
+        function changeDotBackground() {
+            dots.forEach(dot => {
+                dot.style.backgroundColor = '#D9D9D9';
+            });
+    
+            dots[currentDot].style.backgroundColor = '#4d4d4d';
+    
+            currentDot = (currentDot + 1) % dots.length;
+        }
+    
+        setInterval(changeDotBackground, 500);
+        }
     </script>
 </body>
 
