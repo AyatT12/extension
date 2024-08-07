@@ -50,7 +50,8 @@ nav {
 .form-select-driver:focus,
 .form-control2:focus,
 .form-control1:focus,
-.form-select-last:focus {
+.form-select-last:focus ,
+.form-select-settel {
     box-shadow: none !important;
     border: 2px solid #facd9c !important;
 }
@@ -1996,7 +1997,7 @@ flex-direction: row-reverse;
 .check-btn {
     color: #fff;
     background-color: #FF9626;
-    border-color: #FF9626;
+    border-color: #FF9626 !important;
     padding: 0px 12px;
     display: inline-block;
     font-weight: 400;
@@ -2013,8 +2014,8 @@ flex-direction: row-reverse;
 
 .check-btn:hover {
     background-color: white;
-    color: #FF9626;
-    border-color: #FF9626;
+    color: #FF9626 !important;
+    border-color: #FF9626 !important;
 }
 
 .check {
