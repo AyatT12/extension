@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   var firstInput = document.getElementById("days-number-input");
 
-  // Focus the first input when the page loads
   firstInput.focus();
 
   formElements.forEach((element, index) => {
@@ -38,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (nextElement) {
           nextElement.focus();
         } else {
-          // Submit the form if it's the last element
           document.getElementById("contract-extension2-form").submit();
         }
       }
