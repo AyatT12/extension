@@ -42,8 +42,8 @@
 
         .base-timer {
             position: relative;
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
         }
 
         .base-timer__svg {
@@ -79,8 +79,8 @@
 
         .base-timer__label {
             position: absolute;
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             top: 0;
             display: flex;
             align-items: center;
@@ -698,6 +698,9 @@
                                    <div class="Dot" id="dot1"></div>
                                    <div class="Dot" id="dot2"></div>
                                    <div class="Dot" id="dot3"></div>
+                                   <div class="Dot"></div>
+                                   <div class="Dot"></div>
+
                                </div>
                                </div>
                                 
@@ -722,7 +725,6 @@
             var formElements = document.querySelectorAll("#contract-extension2-form input, #contract-extension2-form select, #contract-extension2-form textarea");
             var firstInput = document.getElementById("days-number-input");
 
-            // Focus the first input when the page loads
             firstInput.focus();
 
             formElements.forEach((element, index) => {
@@ -733,7 +735,6 @@
                         if (nextElement) {
                             nextElement.focus();
                         } else {
-                            // Submit the form if it's the last element
                             document.getElementById("contract-extension2-form").submit();
                         }
                     }
