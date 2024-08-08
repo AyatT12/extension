@@ -10,112 +10,11 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Cairo:500,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="css/style.css" rel="styleSheet">
+    <link href="css/loader.css" rel="styleSheet">
     <!-- <link href="css/English_style.css" rel="styleSheet"> -->
-    <style>
-        .main-loader-container {
-            position: fixed;
-            top: 0%;
-            max-width: 100%;
-            background-color: #ffffff00;
-            height: 100%;
-            display: none;
-        }
-        .main-loader-row{
-            position: absolute;
-            width: 100%;
-            top: 40%;
-        }
-        
-        .ActiveTime_title {
-            font-weight: 600;
-        }
-
-        .ActiveTime_P {
-            font-size: 18px;
-            color: #666666;
-            line-height: 32px;
-        }
-
-        .base-timer {
-            position: relative;
-            width: 150px;
-            height: 150px;
-        }
-
-        .base-timer__svg {
-            transform: scaleX(-1);
-            transform: rotate3d(1, 1, 1, 1deg);
-            background: white;
-           border-radius: 50%;
-
-        }
-
-        .base-timer__circle {
-            fill: none;
-            stroke: none;
-        }
-
-        .base-timer__path-elapsed {
-            stroke-width: 7px;
-            stroke: #D9D9D9;
-        }
-
-        .base-timer__path-remaining {
-            stroke-width: 7px;
-            stroke-linecap: round;
-            transform: rotate(90deg);
-            transform-origin: center;
-            transition: 1s linear all;
-            fill-rule: nonzero;
-        }
-
-        .base-timer__path-remaining.blue {
-            stroke: #4d4d4d;
-        }
-
-        .base-timer__label {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            top: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 15px;
-            display: flex;
-    flex-direction: column;
-    gap: 5px;
-
-        }
-
-        #container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .Dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #D9D9D9;
-        }
-
-        .Dots-container {
-            display: flex;
-            gap: 5px;
-            margin: 0px 10px;
-        }
-        #app{
-            display:flex;
-            align-items: center;
-            justify-content: center;
-        }
-    </style> 
+  
 </head>
 
 
@@ -720,79 +619,8 @@
         crossorigin="anonymous"></script>
     <script src="js/extension2.js"></script>
     <script src="js/validation.js"></script>
-     <script>
-        function loader(){
-        $('.main-loader-container').css("display","block");
-         const FULL_DASH_ARRAY = 283; 
-        const WARNING_THRESHOLD = 100;
-        const ALERT_THRESHOLD = 283;
+  <script src="js/Loader.js"></script>
     
-        const COLOR_CODES = {
-            info: {
-                color: "blue"
-            },
-            warning: {
-                color: "blue",
-                threshold: WARNING_THRESHOLD
-            },
-            alert: {
-                color: "red",
-                threshold: ALERT_THRESHOLD
-            }
-        };
-    
-        const TIME_LIMIT = 50;
-        let timePassed = 0;
-        let timeLeft = TIME_LIMIT;
-        let timerInterval = null;
-    
-        startTimer();
-    
-        function onTimesUp() {
-            clearInterval(timerInterval);
-        }
-    
-        function startTimer() {
-            timerInterval = setInterval(() => {
-                timePassed = timePassed += 1;
-                timeLeft = TIME_LIMIT - timePassed;
-                setCircleDasharray();
-    
-                if (timeLeft === 0) {
-                    onTimesUp();
-                }
-            }, 1000);
-        }
-    
-        function calculateTimeFraction() {
-            return (TIME_LIMIT - timeLeft) / TIME_LIMIT;
-        }
-    
-        function setCircleDasharray() {
-            const circleDasharray = `${(
-                calculateTimeFraction() * FULL_DASH_ARRAY
-            ).toFixed(0)} 283`;
-            document
-                .getElementById("base-timer-path-remaining")
-                .setAttribute("stroke-dasharray", circleDasharray);
-        }
-    
-        const dots = document.querySelectorAll('.Dot');
-        let currentDot = 0;
-    
-        function changeDotBackground() {
-            dots.forEach(dot => {
-                dot.style.backgroundColor = '#D9D9D9';
-            });
-    
-            dots[currentDot].style.backgroundColor = '#4d4d4d';
-    
-            currentDot = (currentDot + 1) % dots.length;
-        }
-    
-        setInterval(changeDotBackground, 500);
-        }
-    </script>
 </body>
 
 </html>
