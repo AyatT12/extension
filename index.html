@@ -5,18 +5,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> تمديد العقد</title>
+    <title> عقود قائمة </title>
     <link rel="icon" href="img/logo.png">
+    <!-- ========================= CSS here ========================= -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Cairo:500,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha384-..." crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
     <link href="css/style.css" rel="styleSheet">
     <!-- <link href="css/English_style.css" rel="styleSheet"> -->
 
+
 </head>
+
 
 <body id="page-top" style="background-color:rgba(254, 248, 232, 1);">
 
@@ -27,7 +28,6 @@
         <div id="content">
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light topbar mb-2 static-top shadow  justify-content-between"></nav>
-
             <div class="container-fluid">
                 <section class="section-mainCard">
                     <div class="row justify-content-center w-100 h-100">
@@ -39,54 +39,99 @@
                                         <div>
                                             <img src="img/Close.svg" alt="close_icon" class="close-icon">
                                         </div>
-
+                                    
 
                                     </a>
                                 </div>
                                 <!-- ---- -->
                                 <div class="row layout-row">
-
                                     <div class="row" style="flex-direction: row-reverse;">
                                         <div class="col justify-content-center d-flex title-row">
-                                            <h1 class="card-title">
-                                                قائمة العقود </h1>
+                                            <!-- edited -->
+
+                                            <h1 class="card-title"> العقود القائمة </h1>
+                                           <!-- -------- -->
+
                                         </div>
 
                                     </div>
                                     <div class="row justify-content-center h-100 content-row">
 
-                                        <div class="col-md-11 mx-0">
+                                        <div class="col-md-11 mx-0 h-100">
 
-                                            <form id="contract-extension-form">
+                                            <form id="tenant-form">
 
                                                 <fieldset>
-                                                    <div class="form-card">
-                                                        <div class="row pb-4 seacrh-row align-items-baseline"
-                                                            style="flex-direction: row-reverse;flex-wrap: wrap;">
-                                                            <div class="col-auto">
-                                                                <label for="search"> بحث</label>
+                                                    <div class="form-card card-tables">
+                                                         <!-- edited -->
+
+                                                        <div class="row pb-4 seacrh-row gap-4"
+                                                            style="flex-direction: row-reverse;justify-content: space-between;">
+                                                            <div class="col-12 d-flex align-items-center flex-row-reverse Search-col align-items-baseline"
+                                                                style="justify-content: flex-start;flex-wrap: wrap;">
+
+                                                                <div class="col-auto">
+                                                                    <label for="search"> بحث</label>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <div class="form-outline" data-mdb-input-init>
+                                                                        <span class="fa fa-search"></span>
+                                                                        <input type="search" id="search"
+                                                                            class="form-control inputs" name="search"
+                                                                            aria-label="Search" autofocus />
+                                                                    </div>
+                                                                </div>
+
                                                             </div>
-                                                            <div class="col-auto">
-                                                                <div class="form-outline" data-mdb-input-init>
-                                                                    <span class="fa fa-search"></span>
-                                                                    <input type="search" id="search"
-                                                                        class="form-control inputs" name="search"
-                                                                        aria-label="Search" autofocus />
+                                                            <div class="col-12 d-flex  radio-container px-4"
+                                                                style="flex-direction: row-reverse;flex-wrap: wrap;">
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input custom" type="radio"
+                                                                        name="Options" id="all" value="All" checked />
+                                                                    <label class="form-check-label"
+                                                                        for="all">الكل</label>
+                                                                </div>
+
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input custom" type="radio"
+                                                                        name="Options" id="endedd" value="endedd" />
+                                                                    <label class="form-check-label "
+                                                                        for="endedd" style="color:#aa0d02">منتهي</label>
+                                                                </div>
+
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input custom" type="radio"
+                                                                        name="Options" id="today" value="today" />
+                                                                    <label class="form-check-label "
+                                                                        for="today" style="color:#FF9626">اليوم</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input custom" type="radio"
+                                                                        name="Options" id="tomorrow" value="tomorrow" />
+                                                                    <label class="form-check-label tomorrow"
+                                                                        for="tomorrow" style="color:#39629C">غدًا</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input custom" type="radio"
+                                                                        name="Options" id="later" value="later" />
+                                                                    <label class="form-check-label later"
+                                                                        for="later" style="color:#70399C">لاحقًا</label>
                                                                 </div>
                                                             </div>
+
+
                                                         </div>
+                                                      <!-- -------- -->
+                                                      <!-- edited -->
+
                                                         <div class="row table-row px-3">
-                                                            <div
-                                                                class="col  scroll-table-div  table-responsive-sm  w-100  ">
-                                                                <table class=" tables-style table table-borderless "
-                                                                    id="extensionTable">
+                                                            <div class="col  scroll-table-div  table-responsive-sm  w-100  ">
+                                                                <table  class=" tables-style table table-borderless " id="settelmentListTable">
                                                                     <thead>
                                                                         <tr>
                                                                             <th scope="col">العقد</th>
-                                                                            <th scope="col" class="not-in-mobile">
-                                                                                السيارة</th>
-                                                                            <th scope="col" class="not-in-mobile">
-                                                                                المستأجر</th>
+                                                                            <th scope="col" class="not-in-mobile">السيارة</th>
+                                                                            <th scope="col" class="not-in-mobile">المستأجر</th>
                                                                             <th scope="col"> المتبقي</th>
                                                                             <th scope="col" class="firstTable-col"> العقد</th>
                                                                             <th></th>
@@ -98,99 +143,175 @@
                                                                             <td> <a href="#"><img
                                                                                         src="img/Rectangle 196.svg"
                                                                                         alt="pdf file link"></a></td>
-                                                                            <td class="car not-in-mobile">مازدا - سي اكس 30 - سماوي - 2021-دددد</td>
+                                                                            <td class="car not-in-mobile">مازدا - سي اكس
+                                                                                30 - سماوي - 2021-دددد</td>
                                                                             <td class="name not-in-mobile">نايف هشام
                                                                                 هشام المعمر</td>
-                                                                            <td>يوم</td>
+                                                                            <td> يوم </td>
                                                                             <td class="firstTable-col">
-                                                                                <div class="row flex-nowrap align-items-center">
+                                                                                <div
+                                                                                    class="row flex-nowrap align-items-center">
                                                                                     <div class="col">
-                                                                                        <p class="contract-id">24-1401-4001105-000079 </p>
-                                                                                        <div class="row licence-dates">
+                                                                                        <p class="contract-id">24-1401-4001105-000078</p>
+                                                                                        <div class="row licence-dates-settel">
                                                                                             <div class="col-auto date-col">
-                                                                                                2024/02/07
-                                                                                            </div>
+                                                                                                <div class="d-flex">
+                                                                                                  <div class="col settelDate">   2024/08/22 </div>
+                                                                                                  <div class="col-auto p-0"> 11:12</div>
+                                                                                                </div>
+                                                                                              </div>
                                                                                             <div class="col-auto date-col">
-                                                                                                2023/03/02
+                                                                                              <div class="d-flex">
+                                                                                                <div class="col settelDate">   2024/07/19 </div>
+                                                                                                <div class="col-auto p-0"> 11:12</div>
+                                                                                              </div>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                    
                                                                                 </div>
                                                                             </td>
-                                                                            <td>
-
+                                                                            <td >
+                                                                                    <div class="status-number gap-2">
+                                                                                    <div class="status red-state"></div>
                                                                                     <div>1</div>
-                                                                                
+                                                                               
+                                                                             </div>
                                                                             </td>
+
                                                                         </tr>
                                                                         <tr>
 
                                                                             <td> <a href="#"><img
                                                                                         src="img/Rectangle 196.svg"
                                                                                         alt="pdf file link"></a></td>
-                                                                            <td class="car not-in-mobile">مازدا - سي اكس 30 - سماوي - 2021-دددد</td>
+                                                                            <td class="car not-in-mobile">مازدا - سي اكس
+                                                                                30 - سماوي - 2021-دددد</td>
                                                                             <td class="name not-in-mobile">نايف هشام
                                                                                 هشام المعمر</td>
-                                                                            <td>يوم</td>
+                                                                            <td> يوم </td>
                                                                             <td class="firstTable-col">
-                                                                                <div class="row flex-nowrap align-items-center">
+                                                                                <div
+                                                                                    class="row flex-nowrap align-items-center">
                                                                                     <div class="col">
-                                                                                        <p class="contract-id">24-1401-4001105-000079 </p>
-                                                                                        <div class="row licence-dates">
+                                                                                        <p class="contract-id">24-1401-4001105-000078</p>
+                                                                                        <div class="row licence-dates-settel">
                                                                                             <div class="col-auto date-col">
-                                                                                                2024/02/07
-                                                                                            </div>
+                                                                                                <div class="d-flex">
+                                                                                                  <div class="col settelDate">   2024/08/22 </div>
+                                                                                                  <div class="col-auto p-0"> 11:12</div>
+                                                                                                </div>
+                                                                                              </div>
                                                                                             <div class="col-auto date-col">
-                                                                                                2023/03/02
+                                                                                              <div class="d-flex">
+                                                                                                <div class="col settelDate">   2024/07/19 </div>
+                                                                                                <div class="col-auto p-0"> 11:12</div>
+                                                                                              </div>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                    
                                                                                 </div>
                                                                             </td>
-                                                                            <td>
-
-                                                                                    <div>1</div>
-                                                                                
+                                                                            <td >
+                                                                                    <div class="status-number gap-2">
+                                                                                    <div class="status orange-state"></div>
+                                                                                    <div>2</div>
+                                                                               
+                                                                             </div>
                                                                             </td>
+
                                                                         </tr>
                                                                         <tr>
 
                                                                             <td> <a href="#"><img
                                                                                         src="img/Rectangle 196.svg"
                                                                                         alt="pdf file link"></a></td>
-                                                                            <td class="car not-in-mobile">مازدا - سي اكس 30 - سماوي - 2021-دددد</td>
+                                                                            <td class="car not-in-mobile">مازدا - سي اكس
+                                                                                30 - سماوي - 2021-دددد</td>
                                                                             <td class="name not-in-mobile">نايف هشام
                                                                                 هشام المعمر</td>
-                                                                            <td>يوم</td>
+                                                                            <td> يوم </td>
                                                                             <td class="firstTable-col">
-                                                                                <div class="row flex-nowrap align-items-center">
+                                                                                <div
+                                                                                    class="row flex-nowrap align-items-center">
                                                                                     <div class="col">
-                                                                                        <p class="contract-id">24-1401-4001105-000079 </p>
-                                                                                        <div class="row licence-dates">
+                                                                                        <p class="contract-id">24-1401-4001105-000078</p>
+                                                                                        <div class="row licence-dates-settel">
                                                                                             <div class="col-auto date-col">
-                                                                                                2024/02/07
-                                                                                            </div>
+                                                                                                <div class="d-flex">
+                                                                                                  <div class="col settelDate">   2024/08/22 </div>
+                                                                                                  <div class="col-auto p-0"> 11:12</div>
+                                                                                                </div>
+                                                                                              </div>
                                                                                             <div class="col-auto date-col">
-                                                                                                2023/03/02
+                                                                                              <div class="d-flex">
+                                                                                                <div class="col settelDate">   2024/07/19 </div>
+                                                                                                <div class="col-auto p-0"> 11:12</div>
+                                                                                              </div>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                    
                                                                                 </div>
                                                                             </td>
-                                                                            <td>
-
-                                                                                    <div>1</div>
-                                                                                
+                                                                            <td >
+                                                                                    <div class="status-number gap-2">
+                                                                                    <div class="status later-state"></div>
+                                                                                    <div>3</div>
+                                                                               
+                                                                             </div>
                                                                             </td>
-                                                                        </tr>
 
+                                                                        </tr>
+                                                                        <tr>
+
+                                                                            <td> <a href="#"><img
+                                                                                        src="img/Rectangle 196.svg"
+                                                                                        alt="pdf file link"></a></td>
+                                                                            <td class="car not-in-mobile">مازدا - سي اكس
+                                                                                30 - سماوي - 2021-دددد</td>
+                                                                            <td class="name not-in-mobile">نايف هشام
+                                                                                هشام المعمر</td>
+                                                                            <td> يوم </td>
+                                                                            <td class="firstTable-col">
+                                                                                <div
+                                                                                    class="row flex-nowrap align-items-center">
+                                                                                    <div class="col">
+                                                                                        <p class="contract-id">24-1401-4001105-000078</p>
+                                                                                        <div class="row licence-dates-settel">
+                                                                                            <div class="col-auto date-col">
+                                                                                                <div class="d-flex">
+                                                                                                  <div class="col settelDate">   2024/08/22 </div>
+                                                                                                  <div class="col-auto p-0"> 11:12</div>
+                                                                                                </div>
+                                                                                              </div>
+                                                                                            <div class="col-auto date-col">
+                                                                                              <div class="d-flex">
+                                                                                                <div class="col settelDate">   2024/07/19 </div>
+                                                                                                <div class="col-auto p-0"> 11:12</div>
+                                                                                              </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                   
+                                                                                </div>
+                                                                            </td>
+                                                                            <td >
+                                                                                    <div class="status-number gap-2">
+                                                                                    <div class="status blue-state"></div>
+                                                                                    <div>4</div>
+                                                                               
+                                                                             </div>
+                                                                            </td>
+
+                                                                        </tr>
+                                                                   
                                                                     </tbody>
                                                                 </table>
                                                             </div>
                                                         </div>
+                                                      <!-- -------- -->
 
                                                     </div>
 
@@ -205,74 +326,6 @@
                         </div>
                     </div>
                 </section>
-            </div>
-            <!-- passowrd Modal-->
-            <div class="modal fade" id="PasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered  ">
-                    <div class="modal-content">
-                        <form class="needs-validation" novalidate>
-                            <div class="modal-header password-modal-header mb-2">
-                                <p class="card-title">تغيير كلمة السر</p>
-                                <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true"><img src="img/cancel.png"></span>
-                                </button>
-                            </div>
-                            <div class="modal-body p-0 password-modal-body">
-                                <div class="account-container password-container p-4">
-                                    <div class="row gap-2">
-                                        <div class="col-md-12 ">
-                                            <div class="row flex-row-reverse">
-                                                <div class="col-md-5 pass-titles">
-                                                    <label for="current_pass">كلمة السر الحالية</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <input type="password" id="current_pass" class="password-input"
-                                                        name=" current passowrd" autocomplete="off">
-                                                    <div class="row requird-field">
-                                                        <p style="display:none;"> هذا الحقل مطلوب</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="row flex-row-reverse">
-                                                <div class="col-md-5 pass-titles">
-                                                    <label for="New_pass">كلمة السر الجديدة </label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <input type="password" id="New_pass" class="password-input"
-                                                        name="new passowrd" autocomplete="off">
-                                                    <div class="row requird-field">
-                                                        <p style="display:none;">هذا الحقل مطلوب</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="row flex-row-reverse">
-                                                <div class="col-md-5 pass-titles">
-                                                    <label for="New_pass_reenter">تأكيد كلمة السر الجديدة </label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <input type="password" id="New_pass_reenter" class="password-input"
-                                                        name="new passowrd reenter" autocomplete="off">
-                                                    <div class="row requird-field">
-                                                        <p style="display:none;">هذا الحقل مطلوب</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer password-save-button-row" id="passowrd-save">
-                                <button type="submit" class="btn password-btn-custom ">حفظ</button>
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
             </div>
 
 
@@ -291,7 +344,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-    <script src="js/cotract-extension.js"></script>
+    <script src="js/settementList.js"></script>
 </body>
 
 </html>
