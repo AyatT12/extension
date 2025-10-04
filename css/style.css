@@ -2290,7 +2290,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .scroll-table-div {
-    height: 50vh;
+    height: 58vh;
     min-height: 400px;
     overflow: auto;
     /* width: 1540px; */
@@ -2519,16 +2519,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 /* التمديد */
-#contract-extension-form ,
+#contract-extension-form .form-card  ,
 #contract-extension2-form .form-card {
     height: 70vh;
 }
-#contract-extension-form ,
+#contract-extension-form fieldset,
 #contract-extension2-form fieldset {
     justify-content: space-between;
 }
 @media (max-height: 786px) {
-    #contract-extension-form ,
+    #contract-extension-form .form-card,
     #contract-extension2-form .form-card {
         height: 68vh;
     }
