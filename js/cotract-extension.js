@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
   for (var i = 0; i < rows.length; i++) {
     var cells = rows[i].getElementsByTagName("td");
 
-    for (var j = 1; j < cells.length; j++) { // Start from index 1 to skip the first td
+    for (var j = 0; j < cells.length; j++) { // Start from index 1 to skip the first td
       cells[j].addEventListener("click", function() {
         window.location.href = "extension2.html"; 
       });
