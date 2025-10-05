@@ -866,7 +866,7 @@ footer {
 
 .dropdown-content-extension {
     width: fit-content;
-    min-width: 250px;
+    min-width: 255px;
     right: 0px;
 }
 
