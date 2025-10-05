@@ -2519,6 +2519,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 /* التمديد */
+.contract-id{
+    white-space: nowrap;
+}
 #contract-extension-form .form-card  ,
 #contract-extension2-form .form-card {
     height: 70vh;
@@ -2538,10 +2541,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         min-width: 350px;
     }
 }
-@media (min-width:357px) {
+@media (min-width:375px) {
 .days-number-centered-label{
 height: 53px;
 }
+.days-number-container{
+    flex-wrap: nowrap;
+}
+}
+@media (max-width:1190px) {
+    #extensionTable .licence-dates-settel{
+      flex-direction: column-reverse;
+    }
 }
 /* تقرير مالي  */
 
