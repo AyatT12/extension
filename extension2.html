@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> تفاصيل تمديد العقد</title>
     <link rel="icon" href="img/logo.png">
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Cairo:500,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="css/style.css" rel="styleSheet">
-    <link href="css/loader.css" rel="styleSheet">
+    <link href="../../css/style.css" rel="styleSheet">
+    <!-- <link href="../../css/loader.css" rel="styleSheet"> -->
     <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/dripicons/2.0.0/webfont.min.css' />
 
-    <!-- <link href="css/English_style.css" rel="styleSheet"> -->
+    <!-- <link href="../../css/English_style.css" rel="styleSheet"> -->
     <style>
         .loader {
             width: 20px;
@@ -351,8 +351,8 @@
                                                         <hr>
                                                         <div class="row flex-row-reverse">
                                                             <!-- edited -->
-                                                            <div class="col-lg-6 col-xl-4 d-flex flex-wrap align-items-end days-number-container" style="flex-direction:row-reverse;" >
-                                                                <div class="col-auto days-number-centered-label">
+                                                            <div class="col-lg-6 col-xl-4 d-flex flex-wrap align-items-start  days-number-container" style="flex-direction:row-reverse;" >
+                                                                <div class="col-auto centered-input-label">
                                                                     <label id="days-number" for="days-number-input"> عدد
                                                                         أيام التمديد</label>
                                                                 </div>
@@ -457,29 +457,35 @@
                                                         </div>
                                                         <div class="row gy-3" style="flex-direction: row-reverse;">
                                                             <!-- edited -->
-                                                            <div class="col-lg-6 col-xl-4 d-flex flex-row-reverse  flex-wrap flex-md-nowrap align-items-center ">
-                                                                <div class="col-auto">
-                                                                    <label id="amount-paid" for="amount-paid-input" class="mb-sm-0"> المبلغ المدفوع</label>
+                                                            <div class="col-lg-6 col-xl-4 d-flex flex-row-reverse  flex-wrap flex-md-nowrap align-items-start ">
+                                                                <div class="col-auto centered-input-label">
+                                                                    <label id="amount-paid" for="amount-paid-input"> المبلغ المدفوع</label>
                                                                 </div>
                                                                 <div class="col-auto">
                                                                     <input type="tel" class="form-control form-control2"
                                                                         id="amount-paid-input" name="amount-paid"
                                                                         autocomplete="off">
+                                                                 <div class="row requird-field-row-last">
+                                                                        <div class="invalid-feedback"
+                                                                            style="display: none;">
+                                                                             الحقل مطلوب
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
 
                                                             </div>
                                                             <!-- edited -->
-                                                            <div class="col-lg-6 col-xl-4 d-flex flex-row-reverse  flex-wrap flex-md-nowrap align-items-center">
-                                                                <div class="col-auto d-flex"
+                                                            <div class="col-lg-6 col-xl-4 d-flex flex-row-reverse  flex-wrap flex-md-nowrap align-items-start">
+                                                                <div class="col-auto centered-input-label"
                                                                     style="justify-content: flex-end;">
-                                                                    <label id="payment-method" for="payment-method-select" class="mb-sm-0">طريقة الدفع</label>
+                                                                    <label id="payment-method" for="payment-method-select">طريقة الدفع</label>
                                                                 </div>
 
                                                                 <div class="col-12 col-md-8 ">
                                                                     <div class="offset">
                                                                         <select class="form-select form-select-last"
                                                                             id="payment-method-select"
-                                                                            name="payment-method">
+                                                                            name="payment-method" required>
                                                                             <option selected disabled>
                                                                             </option>
                                                                             <option value="نقدا"> نقدا</option>
@@ -488,16 +494,23 @@
                                                                             <option value="فيزا"> ماسترد كارد</option>
 
                                                                         </select>
+                                                                        <div class="row requird-field-row-last">
+                                                                        <div class="invalid-feedback"
+                                                                            style="display: none;">
+                                                                             الحقل مطلوب
+                                                                        </div>
                                                                     </div>
+                                                                    </div>
+                                                                    
                                                                 </div>
                                                             </div>
                                                             <div
-                                                                class="col-lg-6 col-xl-4 d-flex flex-row-reverse  flex-wrap flex-md-nowrap align-items-center ">
+                                                                class="col-lg-6 col-xl-4 d-flex flex-row-reverse  flex-wrap flex-md-nowrap align-items-start ">
 
-                                                                <div class="col-auto d-flex"
+                                                                <div class="col-auto centered-input-label"
                                                                     style="justify-content: flex-end;">
                                                                     <label id="selling-point"
-                                                                        for="selling-point-dropdown" class="mb-sm-0"> نقطة البيع
+                                                                        for="selling-point-dropdown" > نقطة البيع
                                                                     </label>
 
                                                                 </div>
@@ -506,7 +519,7 @@
                                                                     <div class="offset">
                                                                         <select class="form-select form-select-last"
                                                                             id="selling-point-dropdown"
-                                                                            name="selling-point">
+                                                                            name="selling-point" required>
                                                                             <option selected disabled>
                                                                             </option>
                                                                             <option value="">ايرادات المستأجرين بمصرف
@@ -514,8 +527,14 @@
                                                                             <option value=""> </option>
                                                                             <option value=""> </option>
                                                                         </select>
-                                                                       
+                                                                         <div class="row requird-field-row-last">
+                                                                        <div class="invalid-feedback"
+                                                                            style="display: none;">
+                                                                             الحقل مطلوب
+                                                                        </div>
+                                                                        </div>
                                                                     </div>
+                                                                   
                                                                 </div>
 
 
@@ -683,7 +702,7 @@
         crossorigin="anonymous"></script>
     <script src="js/extension2.js"></script>
     <script src="js/validation.js"></script>
-    <script src="js/Loader.js"></script>
+    <!-- <script src="js/Loader.js"></script> -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 
