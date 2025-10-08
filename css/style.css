@@ -98,11 +98,6 @@ nav {
 
 }
 
-.form-select-settel {
-    /* border-top: none; */
-
-    text-align: end;
-}
 
 .form-select-selling {
     text-align: right;
@@ -125,7 +120,21 @@ nav {
 }
 /* global */
 .centered-input-label{
-    height: 53px;
+    padding-top: calc((35px - 1.5em) / 2);
+}
+.form-select {
+     background-position: left .75rem center !important;
+     direction: rtl;
+     padding: .2rem .75rem .2rem 2rem;
+     height: 35px;
+}
+.modal-header .btn-close {
+    background: url(../img/cancel-2.svg) !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    opacity: 1;
+    width: .5em;
+    border-radius: 0;
 }
 /*======================================================================
 //           ========================== account style ==============================================================================================
@@ -418,12 +427,11 @@ nav {
 #SettlementForm {
     text-align: end;
     position: relative;
-    /* margin-top: 10px; */
-    height: 88%;
 }
 
 .invalid-feedback {
     color: red;
+    display: block;
     font-size: 12px;
 }
 @media (max-width:992px) {
@@ -497,8 +505,6 @@ fieldset {
     width: 100%;
     margin: 0;
     position: relative;
-    height: 90%;
-
 }
 
 .form-card {
@@ -679,8 +685,8 @@ textarea {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    position: sticky;
-    top: 0;
+    /* position: sticky;
+    top: 0; */
     /* /// background-color:rgba(223, 221, 221, 0.274);*/
 }
 
@@ -932,6 +938,9 @@ footer {
 
 /* =========================================================================Settlement ==================================================== */
 /* Hide all except first fieldset */
+#SettlementForm .form-card{
+    height: 62vh;
+}
 #SettlementForm fieldset:not(:first-of-type) {
     display: none;
 }
@@ -941,9 +950,6 @@ footer {
     flex-direction: row-reverse;
 }
 
-#SettlementForm {
-    height: 97%;
-}
 
 /* action Buttons*/
 #SettlementForm .action-button {
@@ -1108,7 +1114,11 @@ footer {
 /* .form-card5-settl{
     gap:15px;
 } */
-
+@media (min-width:767px) {
+    .Centerd-Settlement-type ,.Centerd-Contact-End{
+     height: 53px;
+    }
+}
 /* /////////////////////////////////////SettlementCard2//////////////////////////////////// */
 .expensesDiv {
     display: flex;
@@ -1292,7 +1302,12 @@ flex-direction: row-reverse;
     border-top: none;
 
 }
-
+/***************************************************ميديا شاشة التسوية **************************************************/
+@media (max-height: 786px) {
+    #SettlementForm .form-card {
+        height: 55vh;
+    }
+}
 /***************************************************cards-media**************************************************/
 
 @media (max-width: 320px) {
@@ -1496,9 +1511,6 @@ flex-direction: row-reverse;
         padding-top: 1.1rem;
     } */
 
-    .expensesRow {
-        min-height: 40vh;
-    }
 
     .compensation-Row {
         min-height: 35vh;
@@ -1515,9 +1527,6 @@ flex-direction: row-reverse;
         padding-top: 1.5rem;
     } */
 
-    .expensesRow {
-        min-height: 45vh;
-    }
 
     .compensation-Row {
         min-height: 40vh;
@@ -1549,10 +1558,6 @@ flex-direction: row-reverse;
         padding-top: 2.3rem;
     } */
 
-    .expensesRow {
-        min-height: 48vh;
-    }
-
     .compensation-Row {
         min-height: 44vh;
     }
@@ -1569,10 +1574,6 @@ flex-direction: row-reverse;
 
         padding-top: 2rem;
     } */
-
-    .expensesRow {
-        min-height: 50vh;
-    }
 
     .compensation-Row {
         min-height: 45vh;
@@ -1900,88 +1901,6 @@ flex-direction: row-reverse;
 
 
 
-/*######################################################## */
-.password-modal-header {
-    flex-direction: column-reverse;
-    align-items: center;
-    border-bottom: none;
-}
-
-.card-title {
-    color: #FF9626;
-    text-shadow: 1px 4px 4px rgb(187 187 187 / 68%);
-    font-size: 1.2rem;
-    letter-spacing: 0.32px;
-}
-
-.password-modal-header .close {
-    padding: 1rem;
-    padding-left: .1rem;
-    margin: -1rem -1rem -2.5rem auto;
-    direction: rtl;
-}
-
-.password-modal-body {
-    font-size: .8125rem;
-}
-
-.password-container {
-    border-radius: 8px;
-    border: 1px solid #39629C;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    padding: 15px;
-    margin: 0px 30px;
-    color: #000;
-}
-
-.pass-titles {
-    text-align: end;
-}
-
-.password-input {
-    border-radius: 8px;
-    border: 2px solid #FF9626;
-    text-align: center;
-    color: #39629C;
-    width: 100%;
-    direction: rtl;
-    height: 30px;
-}
-
-.requird-field {
-    justify-content: flex-end;
-    height: 20px;
-    text-align: end;
-    padding-right: 20px;
-    color: red;
-    font-size: 12px;
-}
-
-.password-save-button-row {
-    border: none;
-    flex-direction: row-reverse;
-    padding-left: 40px;
-}
-
-#passowrd-save {
-    padding-left: 25px;
-}
-
-.password-btn-custom {
-    color: #fff !important;
-    background-color: #FF9626 !important;
-    border-color: #FF9626;
-    padding-top: 0;
-    padding-bottom: 1px;
-    padding-right: 15px;
-    border-radius: 8px;
-    padding-left: 15px;
-}
-
-.passowrd-modal-content {
-    border: 3px solid #FF9626;
-    border-radius: 10px;
-}
 
 /*######################################################## */
 
@@ -2065,9 +1984,22 @@ flex-direction: row-reverse;
 
 
 /* *******************************************************************************تعديل جدول الفحص الظاهري****************************************************************************************************** */
-
+.options-col{
+    text-align: end;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap: 5px;
+}
+.Checkup-table td{
+    vertical-align: middle;
+}
+.check-table-notes{
+    resize: none;
+    height: 30px;
+}
 #referenceDiv {
-    height: 52vh;
+    height: 56vh;
     min-height: 450px;
     display: flex;
     flex-direction: column;
@@ -2126,20 +2058,6 @@ input[type=checkbox] {
 
 .check-table td {
     color: #000000;
-}
-
-/* تعديل اتجاه مدخل التاريخ حسب اللغة  */
-input[type="date"] {
-    padding: 5px 10px;
-    position: relative;
-    text-align: end;
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-    display: block;
-    left: 10px;
-    position: absolute;
-
 }
 
 /* تعديل صور ال pdf */
@@ -2285,9 +2203,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* /////////////////////////////////////version2////////////////////////////////////////////////////// */
 /* ستايل عام علي كل الصفحات */
-.card-tables {
-    justify-content: flex-start;
-}
 
 .scroll-table-div {
     height: 58vh;
@@ -2522,35 +2437,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .contract-id{
     white-space: nowrap;
 }
-#contract-extension-form .form-card  ,
-#contract-extension2-form .form-card {
-    height: 70vh;
-}
-#contract-extension-form fieldset,
-#contract-extension2-form fieldset {
-    justify-content: space-between;
-}
-@media (max-height: 786px) {
-    #contract-extension-form .form-card,
-    #contract-extension2-form .form-card {
-        height: 68vh;
-    }
-}
+
 @media (min-width:767px) {
     #dropdown-content-extension2 {
         min-width: 350px;
     }
 }
-@media (min-width:375px) {
-.days-number-centered-label{
-height: 53px;
-}
-.days-number-container{
-    flex-wrap: nowrap;
-}
-}
-@media (max-width:1190px) {
-    #extensionTable .licence-dates-settel{
+@media (max-width:1500px) {
+    .licence-dates-settel{
       flex-direction: column-reverse;
     }
 }
@@ -2565,17 +2459,12 @@ height: 53px;
     padding: 0px 5px;
 }
 
-#SettlementForm .form-card {
-    height: 100%;
-    margin-bottom: 10px;
-    gap: 10px;
-}
 
 @media (min-width:767px) {
 
     #dropdown-content-Settlement,
     #dropdown-content-Settlement3 {
-        min-width: 300px;
+        min-width: 380px;
     }
 }
 
@@ -2650,4 +2539,125 @@ input::-webkit-inner-spin-button {
 input[type="number"]:nth-child(n+4) {
     order: 2;
 }
-/*  */
+/* *******************************************************************************تعديل  المصروفات و التعويضات ****************************************************************************************************** */
+.check-table-notes{
+    background: transparent !important;
+}
+.check-table-notes:focus{
+ border: none;
+ background: transparent !important;
+ box-shadow: none;
+}
+.Table-inputs:focus{
+ border: none;
+ background: transparent !important;
+ box-shadow: none;
+}
+.TablesReferenceDiv {
+    height: 35vh;
+    min-height: 415px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+.TablesReferenceDiv::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+}
+
+.TablesReferenceDiv::-webkit-scrollbar-track {
+    background: rgba(255, 150, 38, 0.16);
+    border-radius: 5px;
+}
+
+.TablesReferenceDiv::-webkit-scrollbar-thumb {
+    background: rgba(255, 150, 38, 0.40);
+    border-radius: 5px;
+    height: 10px;
+}
+
+.Expenses-compensation-Table {
+    border-collapse: separate;
+    border-spacing: 0;  
+    border-radius: 10px; 
+    overflow: hidden; 
+    border: 1px solid #f1b16c; 
+    height: 100%;
+    white-space:nowrap;
+}
+.Expenses-compensation-Table td {
+    border: 1px solid #f1b16c;
+    vertical-align: middle;
+    padding: 5px 10px;
+}
+.Expenses-compensation-Table thead th {
+    background-color: #fdc28214;
+    border: 1px solid #f1b16c; 
+}
+.upload__box2 {
+    align-items: center;
+    justify-content: center;
+}
+.attatchments-table{
+    table-layout: fixed;
+    direction: rtl;
+}
+.attatchments-table td{
+    height: 120px;
+    text-align: center;
+}
+.expensesRow{
+    justify-content: space-evenly;
+}
+#Expenses-upload-box , #compensation-upload-box{
+    justify-content: center;
+}
+.upload__img-close1  {
+    font-size: 20px;
+    background: white;
+    padding: 1px;
+    border-radius: 4px;
+}
+.Attatchments-img-box{
+    background-color: transparent;
+    max-width: 100%;
+    height: 100%;
+}
+.Expenses-compensation-Upload{
+    background-color: transparent;
+}
+.Table-inputs{
+    border: none;
+    text-align: end;
+    width: 100%;
+}
+.total p{
+    margin-bottom: .9rem;
+}
+
+/* *******************************************************************************تعديل  ستايل الدروب داون  ****************************************************************************************************** */
+/* تعديل اتجاه مدخل التاريخ حسب اللغة  */
+input[type="date"] {
+  padding: 5px 10px;
+  position: relative;
+  text-align: end;
+  direction: rtl;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: block;
+  left: 10px;
+  position: absolute;
+}
+/* gloabal pages layout   */
+.form-card {
+    height: 70vh;
+}
+fieldset {
+    justify-content: space-between;
+}
+@media (max-height: 786px) {
+    .form-card {
+        height: 68vh;
+    }
+}
