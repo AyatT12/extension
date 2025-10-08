@@ -1,7 +1,8 @@
 const image = document.getElementById("hover-image-extension2");
 const dropdown = document.getElementById("dropdown-content-extension2");
 
-image.addEventListener("click", function () {
+image.addEventListener("click", function (e) {
+  e.stopPropagation(); 
   if (dropdown.style.display === "block") {
     dropdown.style.display = "none";
   } else {
@@ -13,13 +14,32 @@ image.addEventListener("click", function () {
 const net_contract_Icon = document.getElementById("net_contract_Icon");
 const net_contract_dropdown = document.getElementById("net_contract_dropdown");
 
-net_contract_Icon.addEventListener("click", function () {
+net_contract_Icon.addEventListener("click", function (e) {
+  e.stopPropagation(); 
   if (net_contract_dropdown.style.display === "block") {
     net_contract_dropdown.style.display = "none";
   } else {
     net_contract_dropdown.style.display = "block";
     dropdown.style.display = "none";
   }
+});
+
+document.addEventListener("click", function (e) {
+  if (!dropdown.contains(e.target) && !image.contains(e.target)) {
+    dropdown.style.display = "none";
+  }
+  
+  if (!net_contract_dropdown.contains(e.target) && !net_contract_Icon.contains(e.target)) {
+    net_contract_dropdown.style.display = "none";
+  }
+});
+
+dropdown.addEventListener("click", function (e) {
+  e.stopPropagation();
+});
+
+net_contract_dropdown.addEventListener("click", function (e) {
+  e.stopPropagation();
 });
 document.addEventListener("DOMContentLoaded", function () {
   var formElements = document.querySelectorAll(
