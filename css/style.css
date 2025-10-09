@@ -354,7 +354,11 @@ nav {
     flex-direction: column-reverse;
     background-color: #FCFCFC;
 }
-
+.sinature-Btn-Card {
+    cursor: pointer;
+    box-shadow: 1px 0.5px 8px 0px #FF962633;
+    border-radius: 8px;
+}
 .title_signture {
     display: flex;
     justify-content: center;
@@ -1111,14 +1115,8 @@ footer {
     cursor: pointer;
 }
 
-/* .form-card5-settl{
-    gap:15px;
-} */
-@media (min-width:767px) {
-    .Centerd-Settlement-type ,.Centerd-Contact-End{
-     height: 53px;
-    }
-}
+
+
 /* /////////////////////////////////////SettlementCard2//////////////////////////////////// */
 .expensesDiv {
     display: flex;
@@ -1226,7 +1224,6 @@ flex-direction: row-reverse;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
-    padding-bottom: 100%;
     width: 100%;
     height: 100%;
     background-size: contain;
@@ -1351,13 +1348,6 @@ flex-direction: row-reverse;
 
 }
 
-@media (min-height: 650px) {
-
-
-    .form-card5-settl {
-        gap: .2rem;
-    }
-}
 
 @media(min-height:700px) {
 
@@ -1493,107 +1483,39 @@ flex-direction: row-reverse;
     }
 }
 
-@media (max-height:650px) {
 
-    .SettlementCard1 {
-        gap: 10px
-    }
-
-    .form-card5-settl {
-        gap: 10px
-    }
-
-}
 
 @media (min-height:700px) {
-    /* .data-row-Settl {
-
-        padding-top: 1.1rem;
-    } */
-
-
     .compensation-Row {
         min-height: 35vh;
-    }
-
-    .form-card5-settl {
-        gap: .6rem;
     }
 }
 
 @media (min-height:750px) {
-    /* .data-row-Settl {
-
-        padding-top: 1.5rem;
-    } */
-
 
     .compensation-Row {
         min-height: 40vh;
     }
-
-    .form-card5-settl {
-        gap: 1rem;
-    }
-
-
 }
 
-@media (min-height:800px) {
-    /* .data-row-Settl {
-
-        padding-top: 2rem;
-    } */
-
-    .form-card5-settl {
-        gap: 1.5rem;
-    }
-
-
-}
 
 @media (min-height:850px) {
-    /* .data-row-Settl {
-
-        padding-top: 2.3rem;
-    } */
 
     .compensation-Row {
         min-height: 44vh;
     }
-
-    .form-card5-settl {
-        gap: 1.8rem;
-    }
-
-
 }
 
 @media (min-height:900px) {
-    /* .data-row-Settl {
-
-        padding-top: 2rem;
-    } */
-
     .compensation-Row {
         min-height: 45vh;
     }
-
-    .form-card5-settl {
-        gap: 2rem;
-    }
-
-
 }
 
 @media (max-width:740px) {
     .contract-Settl-row {
         flex-wrap: wrap;
     }
-
-    /* .seacrh-icon-col1{
-        padding-bottom: 20px;
-    } */
 }
 
 @media (min-width:1200px) and (max-width:1300px) {
@@ -2048,13 +1970,13 @@ input[type=checkbox] {
     }
 }
 
-@media (max-width : 1305px) {
+/* @media (max-width : 1305px) {
 
     .virtual-check-table,
     .virtual-check-data {
         width: 100%;
     }
-}
+} */
 
 .check-table td {
     color: #000000;
@@ -2111,6 +2033,14 @@ input[type=checkbox] {
 } */
 
 /************************************************************************* الفحص الفني * */
+@media (max-width:520px) {
+    .TechnicalCheckUp_Btn{
+        padding: 8px;
+    }
+    .TechnicalCheckUp_Btn_Title{
+        display: none;
+    }
+}
 .car-container {
     position: relative;
     display: flex;
@@ -2539,7 +2469,14 @@ input::-webkit-inner-spin-button {
 input[type="number"]:nth-child(n+4) {
     order: 2;
 }
-/* *******************************************************************************تعديل  المصروفات و التعويضات ****************************************************************************************************** */
+/****************************************************************************** Virtual Inspection Error */
+
+@media (max-width:1199px) {
+   #error-message{
+    display: none !important;
+   }
+}
+/********************************************************************************تعديل  المصروفات و التعويضات ****************************************************************************************************** */
 .check-table-notes{
     background: transparent !important;
 }
@@ -2620,7 +2557,7 @@ input[type="number"]:nth-child(n+4) {
 }
 .Attatchments-img-box{
     background-color: transparent;
-    max-width: 100%;
+    width: 100%;
     height: 100%;
 }
 .Expenses-compensation-Upload{
