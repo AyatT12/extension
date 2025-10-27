@@ -81,7 +81,7 @@ document
     saveSignatureBtn = "WriteSignature";
   });
 const uploadContainer = document.querySelector(".upload-container");
-const mainContainer = document.querySelector(".main-container");
+const mainContainer = document.querySelector(".Signature-main-container");
 const UploadSigntaurePic = document.getElementById("UploadSigntaurePic");
 const imageUpload = document.getElementById("imageUpload");
 var imgeURL;
