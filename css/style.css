@@ -645,8 +645,8 @@ textarea {
 /* For webkit-based browsers (Chrome, Safari) */
 
 .table-scroll {
+    height: 56vh;
     overflow: auto;
-    direction: rtl;
     padding-left: 0;
     display: block;
 }
@@ -1943,7 +1943,9 @@ footer {
 .Checkup-table label {
     margin: 0;
 }
-
+.Checkup-table {
+    margin-bottom: 0;
+}
 .Checkup-table td {
     vertical-align: middle;
 }
@@ -2001,31 +2003,25 @@ input[type=checkbox] {
     height: 20px;
 }
 
-@media (max-width : 425px) {
-    #SettlementForm {
-        height: 100%;
-    }
-}
-
-/* @media (max-width : 1305px) {
-
-    .virtual-check-table,
-    .virtual-check-data {
-        width: 100%;
-    }
-} */
-
 .check-table td {
     color: #000000;
 }
 
 /* تعديل صور ال pdf */
+.pdfs_Container {
+    position: absolute;
+    left: 0px;
+}
+.pdf_imgs {
+    position: absolute;
+    left: 70px;
+
+}
 
 .pdf_img {
     /* width: 60px; */
     position: absolute;
     left: 70px;
-
 }
 
 .pdf-anchor {
@@ -2050,12 +2046,17 @@ input[type=checkbox] {
     width: fit-content;
 }
 
-@media (max-width:1024px) {
+@media (max-width:768px) {
 
     .pdf_img,
     .pdf_img2,
-    .pdf_img3 {
+    .pdf_img3,
+    .pdfs_Container
+    {
+        position: static;
+    }
 
+    .pdf_imgs {
         position: static;
     }
 }
@@ -3036,6 +3037,47 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 }
 
+/*  قسم جدول الفحص الظاهري الي جدولين في الايباد */
+.table-container-split {
+    display: none;
+}
+
+.table-container-single {
+    display: block;
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+
+    .table-container-single {
+        display: none;
+    }
+
+    .table-container-split {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .split-table-wrapper {
+        flex: 1;
+        overflow-x: auto;
+    }
+
+    .split-table-wrapper table {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .table-container-single {
+        display: block;
+    }
+
+    .table-container-split {
+        display: none;
+    }
+}
+
+
 /* NEW LAYOUT STRUCTURE */
 .No_Wrap_Text {
     white-space: nowrap;
@@ -3105,7 +3147,18 @@ fieldset {
 .reportTable-div {
     height: 52vh !important;
 }
-
+@media (max-width:1199.98px) {
+    .table-scroll {
+        height: 17vh;
+    }
+    
+}
+@media (min-width:1200px) and (max-width:1399.98px) {
+    .table-scroll {
+        height: 43vh;
+    }
+    
+}
 @media(max-width:1399.98px) {
     .main-card {
         max-height: 80%;
@@ -3126,24 +3179,29 @@ fieldset {
     .scroll-table-div {
         height: 40vh;
     }
-    .upload-container-checking,.upload__img-box {
+
+    .upload-container-checking,
+    .upload__img-box {
         width: 80px;
     }
+
     .TablesReferenceDiv {
-    height: 35vh;
-    min-height: fit-content;
+        height: 35vh;
+        min-height: fit-content;
     }
-    .Expenses-compensation-Table thead th{
+
+    .Expenses-compensation-Table thead th {
         padding: 2px 5px;
     }
-    .Expenses-compensation-Table td{
-     padding: 2px 5px;
+
+    .Expenses-compensation-Table td {
+        padding: 2px 5px;
     }
-    .Expenses-compensation-Table{
-      margin: 0;
+
+    .Expenses-compensation-Table {
+        margin: 0;
     }
 }
-
 /* CUSTODY LAYOUT STRUCTURE */
 #custody-table-div {
     height: 45vh;
@@ -3171,7 +3229,7 @@ fieldset {
     }
 
     .Tenants-table-div {
-        height: 40vh;
+        height: 35vh;
     }
 }
 
@@ -3199,7 +3257,7 @@ fieldset {
 
 /* ACCOUNT IN DESKTOP */
 @media (max-width:1399.98px) {
-    .header-card{
-     display: none;
+    .header-card {
+        display: none;
     }
 }
