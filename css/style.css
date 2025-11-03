@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+
 /*Background color*/
 body {
     background-color: rgba(254, 248, 232, 1);
@@ -475,7 +476,7 @@ nav {
     font-size: 12px;
 }
 
-@media (max-width:992px) {
+@media (max-width:991px) {
     .invalid-feedback {
         font-size: 10px;
     }
@@ -650,6 +651,11 @@ textarea {
     min-height: 100px;
 }
 
+.table th {
+    position: sticky;
+    top: 0;
+}
+
 #SettlementTable {
     padding-left: 0;
     display: block;
@@ -816,6 +822,7 @@ footer {
 .personal-data {
     color: #39629C;
 }
+
 .button-row {
     justify-content: space-between;
     margin-right: 0px;
@@ -849,8 +856,6 @@ footer {
 }
 
 /* ////////////////////////////////custody///////////////////////////////////////////////// */
-
-
 .custody-input {
     --bs-form-check-bg: var(--bs-body-bg);
     width: 1.1em;
@@ -869,7 +874,7 @@ footer {
     appearance: none;
     position: static;
     margin: 0px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 @media (max-width:1399.98px) {
@@ -1429,6 +1434,7 @@ footer {
 
 
 }
+
 @media(max-width:991px) {
 
     .dropdown-content-extension {
@@ -1877,10 +1883,6 @@ footer {
     vertical-align: middle;
 }
 
-.Checkup-table th {
-    position: static;
-}
-
 .check-table-notes {
     resize: none;
     min-height: 30px;
@@ -2214,9 +2216,9 @@ input[type=checkbox] {
 }
 
 .Receipt_Col {
-    width: 60px !important;
-    min-width: 60px !important;
-    max-width: 80px !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    max-width: 60px !important;
     text-align: center;
 }
 
@@ -2286,8 +2288,6 @@ input[type=checkbox] {
 
 @media (min-width:1450px) {
     .Addtion-table-style {
-
-
         direction: ltr;
         font-size: .9375rem;
     }
@@ -2666,7 +2666,7 @@ input[type="number"]:nth-child(n+4) {
     --bs-tooltip-color: white;
 }
 
-@media (min-width:992px) {
+@media (min-width:991) {
     #dropdown-content-contractValue {
         right: 15px;
         bottom: 35px;
@@ -2975,35 +2975,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 /*  قسم جدول الفحص الظاهري الي جدولين في الايباد */
-.table-container-split {
-    display: none;
-}
-
 .table-container-single {
     display: flex;
     flex: 1;
     min-height: 100px;
-}
-
-@media (min-width: 768px) and (max-width: 1199.98px) {
-/* 
-    .table-container-single {
-        display: none;
-    } */
-
-    .table-container-split {
-        display: flex;
-    }
-
-    .split-table-wrapper {
-        display: flex;
-        min-height: 0px;
-        flex: 1;
-    }
-
-    .split-table-wrapper table {
-        width: 100%;
-    }
 }
 
 /* NEW LAYOUT STRUCTURE */
@@ -3130,9 +3105,10 @@ fieldset {
     .table-scroll {
         min-height: 100px;
     }
-    .virtual-check-row{
-     flex-direction: column;
-     flex-wrap: nowrap;
+
+    .virtual-check-row {
+        flex-direction: column;
+        flex-wrap: nowrap;
     }
 }
 
@@ -3141,6 +3117,7 @@ fieldset {
     .main-card {
         height: 93%;
     }
+
     .form-card {
         height: 70dvh;
     }
@@ -3150,12 +3127,14 @@ fieldset {
     }
 
 }
+
 /* vertical tablet */
 @media screen and (min-width: 768px) and (orientation: portrait) {
     .main-card {
         height: 93%;
     }
 }
+
 /* EXPENSES/COMPENSATION TABLES */
 @media (max-width: 1399.98px) and (max-height: 900px) {
 
@@ -3192,28 +3171,87 @@ fieldset {
     padding: 5px;
 }
 
-@media (max-width:992px) {
-    .abbreviation-part{
-        display: none;
-    }
-    .TablesReferenceDiv {
-        height: 320px;
+.Seprate-Line {
+    display: none;
+}
+
+@media (max-width:991px) {
+    .Seprate-Line {
+        display: block;
+        margin: 10px 0px !important;
+        width: 95%;
     }
 
-    .TablesReferenceDiv {
-        height: 320px;
+    .abbreviation-part {
+        display: none;
     }
 
     .expenses-compensation-TableColumn {
-        height: auto;
+        max-height: 40%;
+        height: fit-content;
     }
 
     .expensesRow {
-        flex: none;
-        gap: 10px;
+        flex: 1;
+        min-height: 550px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
     }
 
     .attachments-col {
         height: fit-content;
+    }
+
+}
+
+/* test new font size in report page  */
+@media (min-width: 1399.98px) {
+    .tables-style {
+       font-size: 15px;
+    }
+    #reportTable {
+        font-size: 15px;
+    }
+    .report-card {
+        font-size: 15px;
+    }
+}
+
+/* vertical tablet */
+@media screen and (min-width: 768px) and (orientation: portrait) {
+    .not-in-tablet {
+        display: none;
+    }
+    .Credit-debit-col {
+        width: 100px;
+        max-width: 100px !important;
+        min-width: 100px !important;
+    }
+    .scroll-table-div {
+        padding: 0;
+    }
+}
+/*  mobile   */
+@media (max-width:767px) {
+    .not-in-mobile {
+        display: none;
+    }
+    #reportTable {
+        font-size: 12px;
+    }
+    .tables-style {
+       font-size: 12px;
+    }
+    .report-card {
+        font-size: 12px;
+    }
+    .Credit-debit-col {
+        width: 100px;
+        max-width: 100px !important;
+        min-width: 100px !important;
+    }
+    .scroll-table-div {
+        padding: 0;
     }
 }
