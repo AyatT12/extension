@@ -972,7 +972,7 @@ footer {
 
 .requird-field-row-last {
     justify-content: flex-end;
-    height: 25px;
+    min-height: 25px;
 }
 
 
